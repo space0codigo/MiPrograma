@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>🍫 Tutorial Interactivo: Pastel de Chocolate</title>
+
+<style>
+
+body{
+font-family: Arial, sans-serif;
+margin:0;
+background:#f5f5f5;
+text-align:center;
+}
+
+/* Encabezado */
+
+header{
+background: linear-gradient(90deg,#6b2c2c,#a94442);
+color:white;
+padding:30px;
+}
+
+/* Barra de progreso */
+
+.progress-container{
+width:80%;
+margin:auto;
+background:#ddd;
+border-radius:20px;
+margin-top:20px;
+}
+
+.progress-bar{
+height:20px;
+background:#ffb347;
+width:0%;
+border-radius:20px;
+transition:0.4s;
+}
+
+/* Tutorial */
+
+.tutorial{
+width:70%;
+margin:40px auto;
+background:white;
+padding:30px;
+border-radius:10px;
+box-shadow:0px 4px 10px rgba(0,0,0,0.2);
+}
+
+/* Pasos */
+
+.step{
+display:none;
+animation: aparecer 0.5s ease;
+}
+
+@keyframes aparecer{
+from{
+opacity:0;
+transform:translateY(20px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+.step img{
+width:60%;
+border-radius:10px;
+margin:15px 0;
+}
+
+/* Botones */
+
+button{
+background:#6b2c2c;
+color:white;
+border:none;
+padding:12px 25px;
+margin:15px;
+font-size:16px;
+border-radius:8px;
+cursor:pointer;
+}
+
+button:hover{
+background:#ffb347;
+color:black;
+}
+
+/* Temporizador */
+
+.timer{
+font-size:22px;
+font-weight:bold;
+margin:20px;
+color:#6b2c2c;
+}
+
+/* Estrellas */
+
+.stars{
+font-size:35px;
+cursor:pointer;
+color:gray;
+}
+
+.stars span:hover{
+color:gold;
+}
+
+/* Botón volver arriba */
+
+.topBtn{
+position:fixed;
+bottom:30px;
+right:30px;
+background:#6b2c2c;
+color:white;
+border:none;
+padding:12px 18px;
+border-radius:10px;
+cursor:pointer;
+display:none;
+}
+
+.topBtn:hover{
+background:#ffb347;
+color:black;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>🍫 Tutorial Interactivo: Cómo Hacer un Pastel de Chocolate</h1>
+
+<p>Sigue los pasos y aprende a preparar un delicioso pastel casero.</p>
+
+<div class="progress-container">
+<div class="progress-bar" id="progressBar"></div>
+</div>
+
+</header>
+
+
+<div class="tutorial">
+
+<!-- PASO 1 -->
+
+<div class="step">
+
+<h2>🥚 Paso 1: Ingredientes</h2>
+
+<img src="imagen-ingredientes.jpg">
+
+<p>Para preparar el pastel necesitarás los siguientes ingredientes:</p>
+
+<ul>
+<li>2 tazas de harina de trigo</li>
+<li>1 taza de cacao en polvo</li>
+<li>2 tazas de azúcar</li>
+<li>3 huevos</li>
+<li>1 taza de leche</li>
+<li>1/2 taza de mantequilla</li>
+<li>1 cucharada de polvo para hornear</li>
+<li>1 cucharadita de vainilla</li>
+<li>1 pizca de sal</li>
+</ul>
+
+<p>Estos ingredientes permiten obtener un pastel suave y esponjoso.</p>
+
+</div>
+
+
+<!-- PASO 2 -->
+
+<div class="step">
+
+<h2>🥣 Paso 2: Preparar la Mezcla</h2>
+
+<img src="imagen-mezcla.jpg">
+
+<p>Sigue estos pasos:</p>
+
+<ul>
+<li>Mezcla los ingredientes secos: harina, cacao, azúcar y polvo para hornear.</li>
+<li>En otro recipiente bate los huevos.</li>
+<li>Agrega la leche, mantequilla y vainilla.</li>
+<li>Incorpora lentamente los ingredientes líquidos a los secos.</li>
+<li>Mezcla hasta obtener una masa homogénea.</li>
+</ul>
+
+<p>La mezcla debe quedar suave y sin grumos.</p>
+
+</div>
+
+
+<!-- PASO 3 -->
+
+<div class="step">
+
+<h2>🔥 Paso 3: Hornear</h2>
+
+<img src="imagen-hornear.jpg">
+
+<p>Precalienta el horno a <b>180°C</b>.</p>
+
+<p>Engrasa un molde y vierte la mezcla.</p>
+
+<p>Hornea durante aproximadamente <b>40 minutos</b>.</p>
+
+<div class="timer">
+⏱ Tiempo de horneado: <span id="time">40:00</span>
+</div>
+
+<button onclick="startTimer()">Iniciar temporizador</button>
+
+</div>
+
+
+<!-- PASO 4 -->
+
+<div class="step">
+
+<h2>🎂 Paso 4: Decoración</h2>
+
+<img src="imagen-decorar.jpg">
+
+<p>Cuando el pastel esté frío puedes decorarlo:</p>
+
+<ul>
+<li>Crema de chocolate</li>
+<li>Chispas de chocolate</li>
+<li>Fresas o frutas</li>
+<li>Crema batida</li>
+</ul>
+
+<p>¡Tu pastel está listo! 🍫</p>
+
+<h3>⭐ Califica este tutorial</h3>
+
+<div class="stars">
+
+<span onclick="rate(1)">★</span>
+<span onclick="rate(2)">★</span>
+<span onclick="rate(3)">★</span>
+<span onclick="rate(4)">★</span>
+<span onclick="rate(5)">★</span>
+
+</div>
+
+<p id="ratingText"></p>
+
+</div>
+
+
+<button onclick="prevStep()">⬅ Paso anterior</button>
+<button onclick="nextStep()">Siguiente paso ➡</button>
+
+</div>
+
+
+<button class="topBtn" id="topBtn" onclick="topFunction()">⬆ Arriba</button>
+
+
+<script>
+
+/* SISTEMA DE PASOS */
+
+let step = 0;
+showStep(step);
+
+function showStep(n){
+
+let steps = document.getElementsByClassName("step");
+
+for(let i=0;i<steps.length;i++){
+steps[i].style.display="none";
+}
+
+steps[n].style.display="block";
+
+let progress = ((n+1)/steps.length)*100;
+document.getElementById("progressBar").style.width = progress + "%";
+
+}
+
+function nextStep(){
+
+let steps = document.getElementsByClassName("step");
+
+if(step < steps.length-1){
+step++;
+showStep(step);
+}
+
+}
+
+function prevStep(){
+
+if(step > 0){
+step--;
+showStep(step);
+}
+
+}
+
+
+/* TEMPORIZADOR */
+
+let time = 2400;
+let timer;
+
+function startTimer(){
+
+timer = setInterval(function(){
+
+let minutes = Math.floor(time / 60);
+let seconds = time % 60;
+
+seconds = seconds < 10 ? "0" + seconds : seconds;
+
+document.getElementById("time").innerHTML =
+minutes + ":" + seconds;
+
+time--;
+
+if(time < 0){
+clearInterval(timer);
+alert("🎉 El pastel debería estar listo!");
+}
+
+},1000);
+
+}
+
+
+/* CALIFICACIÓN */
+
+function rate(stars){
+
+document.getElementById("ratingText").innerText =
+"Gracias por calificar el tutorial con " + stars + " estrellas ⭐";
+
+}
+
+
+/* BOTÓN VOLVER ARRIBA */
+
+let topBtn = document.getElementById("topBtn");
+
+window.onscroll = function(){
+
+if(document.body.scrollTop > 200 || document.documentElement.scrollTop > 200){
+topBtn.style.display = "block";
+}else{
+topBtn.style.display = "none";
+}
+
+};
+
+function topFunction(){
+
+document.body.scrollTop = 0;
+document.documentElement.scrollTop = 0;
+
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Tutorial Interactivo: Pastel de Chocolate</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f8f3ef;
+        }
+
+        header {
+            background-color: #5c2c06;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        nav {
+            background-color: #8b4513;
+            padding: 15px;
+            color: white;
+        }
+
+        nav a {
+            color: yellow;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        section {
+            background-color: white;
+            margin: 20px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+        }
+
+        section img {
+            width: 300px;
+            display: block;
+            margin: 10px 0;
+            border-radius: 8px;
+        }
+
+        button {
+            background-color: #5c2c06;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #8b4513;
+        }
+
+        .oculto {
+            display: none;
+        }
+
+        footer {
+            background-color: #3e1f04;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>🍫 Tutorial Interactivo: Cómo Hacer un Pastel de Chocolate</h1>
+    <p>Aprende paso a paso y descubre consejos en cada sección.</p>
+</header>
+
+<nav>
+    <h3>Contenido</h3>
+    <ol>
+        <li><a href="#ingredientes">Ingredientes</a></li>
+        <li><a href="#mezcla">Preparar la Mezcla</a></li>
+        <li><a href="#hornear">Hornear</a></li>
+        <li><a href="#decorar">Decoración</a></li>
+    </ol>
+</nav>
+
+<section id="ingredientes">
+    <h2>1️⃣ Ingredientes</h2>
+    <img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c" alt="Ingredientes pastel">
+    <p>Necesitarás:</p>
+    <ul>
+        <li>2 tazas de harina</li>
+        <li>1 taza de azúcar</li>
+        <li>1 taza de cacao en polvo</li>
+        <li>2 huevos</li>
+        <li>1 taza de leche</li>
+        <li>1/2 taza de mantequilla</li>
+    </ul>
+
+    <button onclick="mostrarConsejo('c1')">Ver consejo</button>
+    <p id="c1" class="oculto">💡 Consejo: Usa cacao 100% puro para un sabor más intenso.</p>
+</section>
+
+<section id="mezcla">
+    <h2>2️⃣ Preparar la Mezcla</h2>
+    <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587" alt="Mezcla pastel">
+    <p>
+        Mezcla primero los ingredientes secos. Luego agrega los huevos,
+        la leche y la mantequilla derretida. Bate hasta obtener una mezcla homogénea.
+    </p>
+
+    <button onclick="mostrarConsejo('c2')">Ver consejo</button>
+    <p id="c2" class="oculto">💡 Consejo: No batas demasiado la mezcla para que el pastel quede esponjoso.</p>
+</section>
+
+<section id="hornear">
+    <h2>3️⃣ Hornear</h2>
+    <img src="https://images.unsplash.com/photo-1604908176997-431c7b53e8f3" alt="Pastel en horno">
+    <p>
+        Precalienta el horno a 180°C y hornea durante 35-40 minutos.
+        Verifica con un palillo si está listo.
+    </p>
+
+    <button onclick="mostrarConsejo('c3')">Ver consejo</button>
+    <p id="c3" class="oculto">💡 Consejo: No abras el horno antes de los primeros 30 minutos.</p>
+</section>
+
+<section id="decorar">
+    <h2>4️⃣ Decoración</h2>
+    <img src="https://images.unsplash.com/photo-1599785209707-28c5d32b3d9f" alt="Pastel decorado">
+    <p>
+        Una vez frío, puedes decorar con chocolate derretido,
+        crema batida o frutas.
+    </p>
+
+    <button onclick="mostrarConsejo('c4')">Ver consejo</button>
+    <p id="c4" class="oculto">💡 Consejo: Deja enfriar completamente antes de decorar.</p>
+</section>
+
+<footer>
+    <p>© 2026 Tutorial Educativo HTML, CSS y JavaScript</p>
+</footer>
+
+<script>
+    function mostrarConsejo(id) {
+        var elemento = document.getElementById(id);
+        if (elemento.style.display === "block") {
+            elemento.style.display = "none";
+        } else {
+            elemento.style.display = "block";
+        }
+    }
+</script>
+
+</body>
+</html>
